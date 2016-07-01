@@ -1,2 +1,6 @@
 <h1>welcome to this lame website</h1>
-<h2><%= link_to "LOG IN", login_url %></h2>
+<% if @user %>
+  <h2>logged in! <%= @user.name %></h2>
+<% else %>
+  <h2><%= link_to "LOG IN", login_url %></h2>
+<% end %>

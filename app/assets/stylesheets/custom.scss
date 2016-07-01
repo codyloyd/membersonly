@@ -1,2 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.main-nav {
+  list-style-type: none;
+  li {
+    margin-top: 12px;
+    margin-right: 10px;
+    color: #ddd;
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

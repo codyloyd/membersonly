@@ -1,0 +1,8 @@
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= post.text %>
+      <% if logged_in? %>
+      | <%= User.find(post.user_id).name %></li>
+      <% end %>
+  <% end %>
+</ul>
