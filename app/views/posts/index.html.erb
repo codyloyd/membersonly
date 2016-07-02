@@ -1,8 +1,15 @@
-<ul>
+<ul class="posts">
   <% @posts.each do |post| %>
-    <li><%= post.text %>
-      <% if logged_in? %>
-      | <%= User.find(post.user_id).name %></li>
-      <% end %>
+    <li>
+      <div class="left">
+        <%= post.text %>
+      </div>
+      <div class="right">
+        <% if logged_in? %>
+        | <%= User.find(post.user_id).name %>
+        <% end %>
+      </div>
+    </li>
+
   <% end %>
 </ul>

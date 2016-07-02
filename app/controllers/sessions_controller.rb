@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       sign_in(user)
       flash[:success] = "sup #{user.name}.. welcome home"
-      redirect_to root_url
+      redirect_to posts_url
     else
       flash.now[:danger] = "NOPE-> TRY AGAIN"
       render 'new'

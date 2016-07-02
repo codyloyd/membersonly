@@ -6,9 +6,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(user_id:current_user.id, text: params[:post][:text])
+    @user = current_user
+    post = @user.posts.new(text: params[:post][:text])
     if post.save
-      flash[:success] = "post posted"
+      flash[:success] = "posted bro"
       redirect_to posts_url
     else
       flash[:danger] = "something broke"
